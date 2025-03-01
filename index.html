@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosta strona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #canvas {
+            border: 3px solid #181926;
+            border-radius: 6px;
+            display: block;
+            margin: 20px auto;
+        }
+        #fontName {
+            width: 300px;
+            padding: 10px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            display: block;
+            text-align: center;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #plotterText {
+            width: 400px;
+            height: 100px;
+            padding: 10px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            display: block;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #sendToPlotter {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #sendToPlotter:hover {
+            background-color: #0056b3;
+        }
+        #fontSelector {
+            width: 400px;
+            padding: 10px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            display: block;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Prosta aplikacja ploterowa</h1>
+
+    <!-- Ekran główny -->
+    <div id="mainScreen">
+        <button id="newFontBtn">Wprowadź nową czcionkę</button>
+        <button id="plotterModeBtn">Pisanie ploterem</button>
+    </div>
+
+    <!-- Sekcja wprowadzania nowej czcionki -->
+    <div id="newFontScreen" style="display:none;">
+        <input type="text" id="fontName" placeholder="Wprowadź nazwę czcionki">
+        <button id="startFontCreation">Rozpocznij wprowadzanie liter</button>
+    </div>
+
+    <!-- Sekcja rysowania liter -->
+    <div id="canvasScreen" style="display:none;">
+        <h2 id="letterPrompt">Narysuj literę A</h2>
+        <canvas id="canvas"></canvas>
+        <button id="clear">Wyczyść</button>
+        <button id="save">Zapisz literę</button>
+    </div>
+
+    <!-- Sekcja potwierdzenia -->
+    <div id="completionScreen" style="display:none;">
+        <h2>Wprowadzono nową czcionkę!</h2>
+        <button id="backToMain">Powrót</button>
+    </div>
+
+    <div id="plotterPanel" style="display: none;">
+        <textarea id="plotterText" placeholder="Wpisz tekst do plottera" maxlength="500"></textarea>
+        <select id="fontSelector">
+            <option value="" disabled selected>Wybierz czcionkę</option>
+        </select>
+        <button id="sendToPlotter">Wyślij do plottera</button>
+    </div>
+
+    <script src="./client.js"></script>
+</body>
+</html>
