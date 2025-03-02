@@ -17,7 +17,6 @@ Python:
  - http.server – do obsługi żądań HTTP
  - json i base64 – do przetwarzania danych użytkownika
  - cv2 (OpenCV) – do konwersji obrazów na pliki .gcode
- - numpy – do obróbki danych graficznych
  - RPi.GPIO – do sterowania silnikami krokowymi i serwomechanizmem
  - time – do synchronizacji ruchów robota
 
